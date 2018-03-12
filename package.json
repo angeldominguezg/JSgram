@@ -1,0 +1,27 @@
+{
+  "name": "platzigram",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Photos like instagram ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Angel Dominguez <angeldominguezg@gmail.com> (https://github.com/angeldominguezg)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "materialize-css": "^0.100.2",
+    "pug": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "browserify": "^16.1.1",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}

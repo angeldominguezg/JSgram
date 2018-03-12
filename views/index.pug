@@ -1,0 +1,75 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Platzigram
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //- FavIcons
+    link(rel='apple-touch-icon', sizes='57x57', href='/apple-icon-57x57.png')
+    link(rel='apple-touch-icon', sizes='60x60', href='/apple-icon-60x60.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='/apple-icon-72x72.png')
+    link(rel='apple-touch-icon', sizes='76x76', href='/apple-icon-76x76.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='/apple-icon-114x114.png')
+    link(rel='apple-touch-icon', sizes='120x120', href='/apple-icon-120x120.png')
+    link(rel='apple-touch-icon', sizes='144x144', href='/apple-icon-144x144.png')
+    link(rel='apple-touch-icon', sizes='152x152', href='/apple-icon-152x152.png')
+    link(rel='apple-touch-icon', sizes='180x180', href='/apple-icon-180x180.png')
+    link(rel='icon', type='image/png', sizes='192x192', href='/android-icon-192x192.png')
+    link(rel='icon', type='image/png', sizes='32x32', href='/favicon-32x32.png')
+    link(rel='icon', type='image/png', sizes='96x96', href='/favicon-96x96.png')
+    link(rel='icon', type='image/png', sizes='16x16', href='/favicon-16x16.png')
+    link(rel='manifest', href='/manifest.json')
+    meta(name='msapplication-TileColor', content='#ffffff')
+    meta(name='msapplication-TileImage', content='/ms-icon-144x144.png')
+    meta(name='theme-color', content='#ffffff')
+    //- Compiled and minified CSS
+    link(href='https://fonts.googleapis.com/css?family=Montserrat|Oleo+Script', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', type='text/css', media='screen', href='index.css')
+
+  body
+    section#main-container
+      .container
+        .row
+          .col.s10.push-s1
+            .row
+              .col.m5.hide-on-small-only
+                img.iphone(src='iphone.png', alt='')
+              .col.s12.m7
+                .row
+                  .signup-box
+                    h1.platzigram Platzigram
+                    form.signup-form(action='')
+                      h2 Registrate para ver fotos de tus amigos estudiando en Platzi
+                      .section
+                        a.waves-effect.waves-light.btn.btn-fb.hiden-on-small-only(href='') Iniciar sesión con Facebook
+                        a.waves-effect.waves-light.btn.btn-fb.hide-on-med-and-up(href='') Iniciar sesión
+                      .divider
+                      .section
+                        input#email(type='email', name='email', placeholder='Correo Electronico')
+                        input#name(type='text', name='name', placeholder='Nombre Completo')
+                        input#username(type='text', name='usename', placeholder='Nombre de usuario')
+                        input#password(type='password', name='password', placeholder='Contraseña')
+                        button.waves-effect.waves-light.btn(type='submit') Registrate
+                .row
+                  .login-box
+                    | Tiene una cuenta? 
+                    a(href='/signin') Entrar
+    footer.site-footer
+      .container
+        .row
+          .col.s12.l3.center-align
+            // Dropdown Trigger
+            a.dropdown-button.btn(href='#', data-activates='dropdown1') Idiomas
+            // Dropdown Structure
+            ul#dropdown1.dropdown-content
+              li
+                a(href='#!') Español
+              li
+                a(href='#!') Ingles
+          .col.s12.l3.push-l6.center-align
+            | © 2016 Platzigram
+    //- Compiled and minified JavaScript
+    script(type='text/javascript', src='https://code.jquery.com/jquery-3.2.1.min.js')
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js')
+    script(type='text/javascript', src='app.js')
