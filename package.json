@@ -5,14 +5,21 @@
   "description": "Photos like instagram ",
   "main": "server.js",
   "scripts": {
+    "start": "gulp watch & node server.js",
+    "build": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Angel Dominguez <angeldominguezg@gmail.com> (https://github.com/angeldominguezg)",
   "license": "MIT",
   "dependencies": {
+    "empty-element": "^1.0.0",
     "express": "^4.16.2",
+    "install": "^0.10.4",
     "materialize-css": "^0.100.2",
-    "pug": "^2.0.1"
+    "npm": "^5.7.1",
+    "page": "^1.8.4",
+    "pug": "^2.0.1",
+    "yo-yo": "^1.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -21,7 +28,8 @@
     "browserify": "^16.1.1",
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "vinyl-source-stream": "^2.0.0"
+    "gulp-sass": "^3.2.0",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.11.0"
   }
 }
