@@ -6,10 +6,15 @@ app.use(express.static('public'))
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function(req, res) {
-  res.render('index')
+  res.render('index', { title: 'Platzigram' })
 })
+
 app.get('/signup', function(req, res) {
-  res.render('index')
+  res.render('index', { title: 'Platzigram - Signup' })
+})
+
+app.get('/signin', function(req, res) {
+  res.render('index', { title: 'Platzigram - Signin' })
 })
 
 app.listen(3000, function(err) {

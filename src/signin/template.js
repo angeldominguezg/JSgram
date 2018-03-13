@@ -2,7 +2,7 @@
 const yo = require('yo-yo')
 const landing = require('../landing')
 
-let signupForm = yo`<div class="col s12 m7">
+let signinForm = yo`<div class="col s12 m7">
                       <div class="row">
                         <div class="signup-box">
                           <h1 class="platzigram">Platzigram</h1>
@@ -14,18 +14,16 @@ let signupForm = yo`<div class="col s12 m7">
                                 </div>
                                 <div class="divider"></div>
                                 <div class="section">
-                                  <input id="email" type="email" name="email" placeholder="Correo Electronico"/>
-                                  <input id="name" type="text" name="name" placeholder="Nombre Completo"/>
                                   <input id="username" type="text" name="usename" placeholder="Nombre de usuario"/>
                                   <input id="password" type="password" name="password" placeholder="Contraseña"/>
-                                  <button class="waves-effect waves-light btn" type="submit">Registrate</button>
+                                  <button class="waves-effect waves-light btn" type="submit">Inicia Session</button>
                                 </div>
                             </form>
                           </div>
                         </div>
                         <div class="row">
-                          <div class="login-box">Tiene una cuenta? <a href="/signin">Entrar</a>
+                          <div class="login-box">No tiene una cuenta? <a href="/signup">Regístrate</a>
                         </div>
                       </div>
                     </div>`
-module.exports = landing(signupForm)
+module.exports = landing(signinForm)
