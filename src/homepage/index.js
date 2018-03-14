@@ -7,5 +7,29 @@ const title = require('title')
 page('/', (ctx, next) => {
   title('Platzigram - Home')
   const main = document.getElementById('main-container')
-  empty(main).appendChild(template)
+
+  var pictures = [
+    {
+      user: {
+        username: 'adominguez',
+        avatar:
+          'https://avatars2.githubusercontent.com/u/4062638?s=400&u=9265f2fa18a8618d45cb67d8e82a099b5428519c&v=4'
+      },
+      url: 'http://materializecss.com/images/office.jpg',
+      likes: 1024,
+      liked: true
+    },
+    {
+      user: {
+        username: 'adominguez',
+        avatar:
+          'https://avatars2.githubusercontent.com/u/4062638?s=400&u=9265f2fa18a8618d45cb67d8e82a099b5428519c&v=4'
+      },
+      url: 'http://materializecss.com/images/office.jpg',
+      likes: 1024,
+      liked: true
+    }
+  ]
+
+  empty(main).appendChild(template(pictures))
 })

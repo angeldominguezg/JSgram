@@ -6964,5 +6964,30 @@ body {
 .timeline {
   padding: 30px 0; }
 
+.avatar {
+  max-width: 48px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 12px; }
+
+.card .username {
+  color: #125688; }
+
+.card small.time {
+  line-height: 48px; }
+
+.card p {
+  padding: 20px 0; }
+
+.card .likes {
+  line-height: 30px;
+  margin-left: 12; }
+
+.card i {
+  font-size: 30px; }
+
+.card .fa-heart {
+  color: tomato; }
+
 .m-t-30 {
   margin: 30px auto; }
