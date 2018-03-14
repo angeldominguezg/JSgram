@@ -9,8 +9,8 @@ let signupForm = yo`<div class="col s12 m7">
                             <form class="signup-form" action="">
                               <h2>Registrate para ver fotos de tus amigos estudiando en Platzi</h2>
                                 <div class="section">
-                                  <a class="waves-effect waves-light btn btn-fb hiden-on-small-only" href="">Iniciar sesión con Facebook</a>
-                                  <a class="waves-effect waves-light btn btn-fb hide-on-med-and-up" href="">Iniciar sesión</a>
+                                  <a class="waves-effect waves-light btn btn-fb hide-on-small-only" href="">Iniciar sesión con Facebook</a>
+                                  <a class="waves-effect waves-light btn btn-fb hide-on-med-and-up" href=""><i class="fab fa-facebook"></i> Iniciar sesión</a>
                                 </div>
                                 <div class="divider"></div>
                                 <div class="section">

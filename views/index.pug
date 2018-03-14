@@ -25,35 +25,11 @@ html
     //- Compiled and minified CSS
     link(href='https://fonts.googleapis.com/css?family=Montserrat|Oleo+Script', rel='stylesheet', type='text/css')
     link(rel='stylesheet', type='text/css', media='screen', href='index.css')
+
     title=title
   body
     section#main-container
-      .container
-        .row
-          .col.s10.push-s1
-            .row
-              .col.m5.hide-on-small-only
-                img.iphone(src='iphone.png', alt='')
-              .col.s12.m7
-                .row
-                  .signup-box
-                    h1.platzigram Platzigram
-                    form.signup-form(action='')
-                      h2 Registrate para ver fotos de tus amigos estudiando en Platzi
-                      .section
-                        a.waves-effect.waves-light.btn.btn-fb.hiden-on-small-only(href='') Iniciar sesión con Facebook
-                        a.waves-effect.waves-light.btn.btn-fb.hide-on-med-and-up(href='') Iniciar sesión
-                      .divider
-                      .section
-                        input#email(type='email', name='email', placeholder='Correo Electronico')
-                        input#name(type='text', name='name', placeholder='Nombre Completo')
-                        input#username(type='text', name='usename', placeholder='Nombre de usuario')
-                        input#password(type='password', name='password', placeholder='Contraseña')
-                        button.waves-effect.waves-light.btn(type='submit') Registrate
-                .row
-                  .login-box
-                    | Tiene una cuenta? 
-                    a(href='/signin') Entrar
+
     footer.site-footer
       .container
         .row
@@ -69,6 +45,7 @@ html
           .col.s12.l3.push-l6.center-align
             | © 2016 Platzigram
     //- Compiled and minified JavaScript
+    script(type='text/javascript', src="https://use.fontawesome.com/releases/v5.0.8/js/all.js")
     script(type='text/javascript', src='https://code.jquery.com/jquery-3.2.1.min.js')
     script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js')
     script(type='text/javascript', src='app.js')

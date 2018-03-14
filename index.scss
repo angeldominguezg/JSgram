@@ -8,7 +8,7 @@ body {
 }
 
 #main-container {
-  margin: 30px auto;
+  // margin: 30px auto;
 }
 
 .iphone {
@@ -29,9 +29,10 @@ body {
   text-align: center;
 }
 
-.signup-box .platzigram {
-  font-family: 'Oleo Script';
+.platzigram {
+  font-family: 'Oleo Script' !important;
   font-size: 42px;
+  color: $secondary-color !important;
 }
 
 .signup-form {
@@ -55,4 +56,19 @@ body {
 
 .signup-form .btn.btn-signup {
   background-color: #125688;
+}
+
+.header {
+  background-color: #fafafa;
+  color: $secondary-color;
+  box-shadow: none;
+  border-bottom: 1 solid #edeeee;
+}
+
+.timeline {
+  padding: 30px 0;
+}
+
+.m-t-30 {
+  margin: 30px auto;
 }
