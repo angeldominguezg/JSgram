@@ -7,7 +7,6 @@ const title = require('title')
 page('/', (ctx, next) => {
   title('Platzigram - Home')
   const main = document.getElementById('main-container')
-
   var pictures = [
     {
       user: {
@@ -17,7 +16,7 @@ page('/', (ctx, next) => {
       },
       url: 'http://materializecss.com/images/office.jpg',
       likes: 1024,
-      liked: true
+      liked: false
     },
     {
       user: {

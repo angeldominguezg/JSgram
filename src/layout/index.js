@@ -7,10 +7,10 @@ module.exports = function(content) {
           <div class="nav-wrapper">
             <div class="container">
               <div class="row">
-              <div class="col s12 m6 offset-m1">
+              <div class="col m5 offset-m1 s10">
                 <a href="/" class="brand-logo platzigram">Platzigram</a>
               </div>
-              <div class="col s2 m6 push-m10 push-s10">
+              <div class="col s2 push-s2 m2 push-m5">
                 <a href="#" class="btn btn-large btn-flat dropdown-button" data-activate="drop-user">
                   <i class="fas fa-user"></i>
                 </a>

@@ -6913,7 +6913,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   /*shape-rendering: crispEdges;*/ }
 
 body {
-  background: #fafafa;
+  background: #f2f2f2;
   color: #125688;
   font-family: Montserrat; }
 
@@ -6965,29 +6965,41 @@ body {
   padding: 30px 0; }
 
 .avatar {
-  max-width: 48px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   float: left;
   margin-right: 12px; }
 
 .card .username {
-  color: #125688; }
+  color: #125688;
+  line-height: 48px; }
 
 .card small.time {
-  line-height: 48px; }
+  line-height: 48px !important; }
 
 .card p {
   padding: 20px 0; }
 
 .card .likes {
-  line-height: 30px;
-  margin-left: 12; }
+  line-height: 22px;
+  margin-left: 12px; }
 
 .card i {
   font-size: 30px; }
 
-.card .fa-heart {
-  color: tomato; }
+.card .likedPicture {
+  color: #125688; }
+
+.card .unlikedPicture {
+  color: tomato;
+  display: none; }
+
+.card.liked .likedPicture {
+  display: none; }
+
+.card.liked .unlikedPicture {
+  display: block; }
 
 .m-t-30 {
   margin: 30px auto; }

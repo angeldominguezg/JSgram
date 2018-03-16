@@ -2,8 +2,8 @@ $secondary-color: #125688;
 @import './node_modules/materialize-css/sass/materialize.scss';
 
 body {
-  background: #fafafa;
-  color: #125688;
+  background: #f2f2f2;
+  color: $secondary-color;
   font-family: Montserrat
 }
 
@@ -69,8 +69,11 @@ body {
   padding: 30px 0;
 }
 
+$avatar-size: 48px;
+
 .avatar {
-  max-width: 48px;
+  width: $avatar-size;
+  height: $avatar-size;
   border-radius: 50%;
   float: left;
   margin-right: 12px;
@@ -78,10 +81,12 @@ body {
 
 .card .username {
   color: $secondary-color;
+  line-height: $avatar-size;
 }
 
+
 .card small.time {
-  line-height: 48px;
+  line-height:$avatar-size !important;
 }
 
 .card p {
@@ -89,16 +94,30 @@ body {
 }
 
 .card .likes {
-  line-height: 30px;
-  margin-left: 12;
+  line-height: 22px;
+  margin-left: 12px;
 }
 
 .card i {
   font-size: 30px;
 }
 
-.card .fa-heart {
-  color: tomato
+.card .likedPicture{
+ color: $secondary-color;
+}
+
+.card .unlikedPicture{
+  color: tomato;
+  display: none;
+}
+
+.card.liked {
+  .likedPicture {
+    display: none;
+  }
+  .unlikedPicture {
+    display: block;
+  }
 }
 
 .m-t-30 {
