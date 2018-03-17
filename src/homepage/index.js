@@ -15,7 +15,7 @@ page('/', (ctx, next) => {
           'https://avatars2.githubusercontent.com/u/4062638?s=400&u=9265f2fa18a8618d45cb67d8e82a099b5428519c&v=4'
       },
       url: 'http://materializecss.com/images/office.jpg',
-      likes: 1024,
+      likes: 0,
       liked: false,
       createdAt: new Date()
     },
@@ -26,7 +26,7 @@ page('/', (ctx, next) => {
           'https://avatars2.githubusercontent.com/u/4062638?s=400&u=9265f2fa18a8618d45cb67d8e82a099b5428519c&v=4'
       },
       url: 'http://materializecss.com/images/office.jpg',
-      likes: 1024,
+      likes: 1,
       liked: true,
       createdAt: new Date().setDate(new Date().getDate() -32)
     }

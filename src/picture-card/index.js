@@ -1,12 +1,6 @@
 'use strict'
 const yo = require('yo-yo')
-const moment = require('moment')
-window.IntlRelativeFormat = require('intl-relativeformat')
-
-require('intl-relativeformat/dist/locale-data/en.js')
-require('intl-relativeformat/dist/locale-data/es.js')
-
-var rf = new IntlRelativeFormat('es')
+const translate = require('../translate')
 module.exports = function pictureCard(pic) {
   var el
   function render(picture) {
@@ -20,7 +14,7 @@ module.exports = function pictureCard(pic) {
           <img src="${picture.user.avatar}" class="avatar"/>
           <span class="username">${picture.user.username}</span>
         </a>
-        <small class="right time">${rf.format(picture.createdAt)}</small>
+        <small class="right time">${translate.date.format(picture.createdAt)}</small>
         <p>
           <a class="left" href="#" onclick=${like.bind(
             null,
@@ -30,7 +24,7 @@ module.exports = function pictureCard(pic) {
             null,
             false
           )}><i class="unlikedPicture fas fa-heart" aria-hidden="true"></i></a>
-          <span class="left likes">${picture.likes} me gusta</span>
+          <span class="left likes">${translate.message('likes', {likes: picture.likes})}</span>
         </p>
       </div>
     </div>`
