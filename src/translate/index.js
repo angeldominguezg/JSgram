@@ -21,8 +21,7 @@ let MESSAGES = {}
 MESSAGES.es = es
 MESSAGES['en-US'] = en
 
-// const locale = 'es'
-const locale = 'en-US'
+const locale = localStorage.locale || 'es'
 
 module.exports = {
   message: function(text, opts = {}) {

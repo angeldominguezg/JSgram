@@ -9870,6 +9870,28 @@ module.exports = [
 },{}],39:[function(require,module,exports){
 'use strict';
 
+var _templateObject = _taggedTemplateLiteral(['\n<footer class="site-footer">\n  <div class="container">\n    <div class="row">\n      <div class="col s12 l3 center-align">\n        <!-- Dropdown Trigger-->\n        <a class="dropdown-button btn" href="#" data-activates="dropdown1">', '</a>\n        <ul class="dropdown-content" id="dropdown1">\n          <li><a href="#!" onclick=', '>', '</a></li>\n          <li><a href="#!" onclick=', '>', '</a></li>\n        </ul>\n        <!-- Dropdown Structure-->\n      </div>\n      <div class="col s12 l3 push-l6 center-align">\xA9 2016 Platzigram</div>\n    </div>\n  </div>\n</footer>'], ['\n<footer class="site-footer">\n  <div class="container">\n    <div class="row">\n      <div class="col s12 l3 center-align">\n        <!-- Dropdown Trigger-->\n        <a class="dropdown-button btn" href="#" data-activates="dropdown1">', '</a>\n        <ul class="dropdown-content" id="dropdown1">\n          <li><a href="#!" onclick=', '>', '</a></li>\n          <li><a href="#!" onclick=', '>', '</a></li>\n        </ul>\n        <!-- Dropdown Structure-->\n      </div>\n      <div class="col s12 l3 push-l6 center-align">\xA9 2016 Platzigram</div>\n    </div>\n  </div>\n</footer>']);
+
+function _taggedTemplateLiteral(strings, raw) {
+  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
+}
+
+var yo = require('yo-yo');
+var translate = require('../translate');
+
+var el = yo(_templateObject, translate.message('language'), lang.bind(null, 'es'), translate.message('spanish'), lang.bind(null, 'en-US'), translate.message('english'));
+
+function lang(locale) {
+  localStorage.locale = locale;
+  location.reload();
+  return false;
+}
+
+document.body.appendChild(el);
+
+},{"../translate":52,"yo-yo":37}],40:[function(require,module,exports){
+'use strict';
+
 var page = require('page');
 var empty = require('empty-element');
 var template = require('./template');
@@ -9901,7 +9923,7 @@ page('/', function (ctx, next) {
   empty(main).appendChild(template(pictures));
 });
 
-},{"./template":40,"empty-element":3,"page":32,"title":34}],40:[function(require,module,exports){
+},{"./template":41,"empty-element":3,"page":32,"title":34}],41:[function(require,module,exports){
 'use strict';
 
 var _templateObject = _taggedTemplateLiteral(['\n  <div class="container timeline">\n    <div class="row">\n    <div class="col s12 m10 offset-m1 l6 offset-l3">\n      ', '\n    </div>\n    </div>\n  </div>'], ['\n  <div class="container timeline">\n    <div class="row">\n    <div class="col s12 m10 offset-m1 l6 offset-l3">\n      ', '\n    </div>\n    </div>\n  </div>']);
@@ -9921,7 +9943,7 @@ module.exports = function (pictures) {
   return layout(el);
 };
 
-},{"../layout":43,"../picture-card":44,"yo-yo":37}],41:[function(require,module,exports){
+},{"../layout":44,"../picture-card":45,"yo-yo":37}],42:[function(require,module,exports){
 'use strict';
 
 var page = require('page');
@@ -9929,10 +9951,11 @@ var page = require('page');
 require('./homepage');
 require('./signup');
 require('./signin');
+require('./footer');
 
 page.start();
 
-},{"./homepage":39,"./signin":45,"./signup":47,"page":32}],42:[function(require,module,exports){
+},{"./footer":39,"./homepage":40,"./signin":46,"./signup":48,"page":32}],43:[function(require,module,exports){
 'use strict';
 
 var _templateObject = _taggedTemplateLiteral(['<div class="container">\n  <div class="row">\n    <div class="col s10 push-s1 m-t-30">\n      <div class="row">\n        <div class="col m5 hide-on-small-only">\n          <img class="iphone" src="iphone.png" alt=""/>>\n        </div>\n        ', '\n      </div>\n    </div>\n  </div>\n</div>'], ['<div class="container">\n  <div class="row">\n    <div class="col s10 push-s1 m-t-30">\n      <div class="row">\n        <div class="col m5 hide-on-small-only">\n          <img class="iphone" src="iphone.png" alt=""/>>\n        </div>\n        ', '\n      </div>\n    </div>\n  </div>\n</div>']);
@@ -9947,7 +9970,7 @@ module.exports = function landing(box) {
   return yo(_templateObject, box);
 };
 
-},{"yo-yo":37}],43:[function(require,module,exports){
+},{"yo-yo":37}],44:[function(require,module,exports){
 'use strict';
 
 var _templateObject = _taggedTemplateLiteral(['\n      <div>\n        <nav class="header">\n          <div class="nav-wrapper">\n            <div class="container">\n              <div class="row">\n              <div class="col m5 offset-m1 s10">\n                <a href="/" class="brand-logo platzigram">Platzigram</a>\n              </div>\n              <div class="col s2 push-s2 m2 push-m5">\n                <a href="#" class="btn btn-large btn-flat dropdown-button" data-activate="drop-user">\n                  <i class="fas fa-user"></i>\n                </a>\n                <ul id="drop-user" class="dropdown-content">\n                  <li><a href="#">Salir</a></li>\n                </ul>\n              </div>\n              </div>\n            </div>\n          </div>\n        </nav>\n        <div class="content">\n          ', '\n        </div>\n      </div>'], ['\n      <div>\n        <nav class="header">\n          <div class="nav-wrapper">\n            <div class="container">\n              <div class="row">\n              <div class="col m5 offset-m1 s10">\n                <a href="/" class="brand-logo platzigram">Platzigram</a>\n              </div>\n              <div class="col s2 push-s2 m2 push-m5">\n                <a href="#" class="btn btn-large btn-flat dropdown-button" data-activate="drop-user">\n                  <i class="fas fa-user"></i>\n                </a>\n                <ul id="drop-user" class="dropdown-content">\n                  <li><a href="#">Salir</a></li>\n                </ul>\n              </div>\n              </div>\n            </div>\n          </div>\n        </nav>\n        <div class="content">\n          ', '\n        </div>\n      </div>']);
@@ -9961,7 +9984,7 @@ module.exports = function (content) {
   return yo(_templateObject, content);
 };
 
-},{"yo-yo":37}],44:[function(require,module,exports){
+},{"yo-yo":37}],45:[function(require,module,exports){
 'use strict';
 
 var _templateObject = _taggedTemplateLiteral(['\n    <div class="card ', '">\n      <div class="card-image">\n        <img class="activator" src="', '">\n      </div>\n      <div class="card-content">\n        <a href="/user/', '" class="card-title">\n          <img src="', '" class="avatar"/>\n          <span class="username">', '</span>\n        </a>\n        <small class="right time">', '</small>\n        <p>\n          <a class="left" href="#" onclick=', '><i class="likedPicture far fa-heart" aria-hidden="true"></i></a>\n          <a class="left" href="#" onclick=', '><i class="unlikedPicture fas fa-heart" aria-hidden="true"></i></a>\n          <span class="left likes">', '</span>\n        </p>\n      </div>\n    </div>'], ['\n    <div class="card ', '">\n      <div class="card-image">\n        <img class="activator" src="', '">\n      </div>\n      <div class="card-content">\n        <a href="/user/', '" class="card-title">\n          <img src="', '" class="avatar"/>\n          <span class="username">', '</span>\n        </a>\n        <small class="right time">', '</small>\n        <p>\n          <a class="left" href="#" onclick=', '><i class="likedPicture far fa-heart" aria-hidden="true"></i></a>\n          <a class="left" href="#" onclick=', '><i class="unlikedPicture fas fa-heart" aria-hidden="true"></i></a>\n          <span class="left likes">', '</span>\n        </p>\n      </div>\n    </div>']);
@@ -9990,7 +10013,7 @@ module.exports = function pictureCard(pic) {
   return el;
 };
 
-},{"../translate":51,"yo-yo":37}],45:[function(require,module,exports){
+},{"../translate":52,"yo-yo":37}],46:[function(require,module,exports){
 'use strict';
 
 var page = require('page');
@@ -10004,10 +10027,10 @@ page('/signin', function (ctx, next) {
   empty(main).appendChild(template);
 });
 
-},{"./template":46,"empty-element":3,"page":32,"title":34}],46:[function(require,module,exports){
+},{"./template":47,"empty-element":3,"page":32,"title":34}],47:[function(require,module,exports){
 'use strict';
 
-var _templateObject = _taggedTemplateLiteral(['<div class="col s12 m7">\n                      <div class="row">\n                        <div class="signup-box">\n                          <h1 class="platzigram">Platzigram</h1>\n                            <form class="signup-form" action="">\n                              <h2>Registrate para ver fotos de tus amigos estudiando en Platzi</h2>\n                                <div class="section">\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-small-only" href="">Iniciar sesi\xF3n con Facebook</a>\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-med-and-up" href=""><i class="fab fa-facebook"></i> Iniciar sesi\xF3n</a>\n                                </div>\n                                <div class="divider"></div>\n                                <div class="section">\n                                  <input id="username" type="text" name="usename" placeholder="Nombre de usuario"/>\n                                  <input id="password" type="password" name="password" placeholder="Contrase\xF1a"/>\n                                  <button class="waves-effect waves-light btn" type="submit">Inicia Session</button>\n                                </div>\n                            </form>\n                          </div>\n                        </div>\n                        <div class="row">\n                          <div class="login-box">No tiene una cuenta? <a href="/signup">Reg\xEDstrate</a>\n                        </div>\n                      </div>\n                    </div>'], ['<div class="col s12 m7">\n                      <div class="row">\n                        <div class="signup-box">\n                          <h1 class="platzigram">Platzigram</h1>\n                            <form class="signup-form" action="">\n                              <h2>Registrate para ver fotos de tus amigos estudiando en Platzi</h2>\n                                <div class="section">\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-small-only" href="">Iniciar sesi\xF3n con Facebook</a>\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-med-and-up" href=""><i class="fab fa-facebook"></i> Iniciar sesi\xF3n</a>\n                                </div>\n                                <div class="divider"></div>\n                                <div class="section">\n                                  <input id="username" type="text" name="usename" placeholder="Nombre de usuario"/>\n                                  <input id="password" type="password" name="password" placeholder="Contrase\xF1a"/>\n                                  <button class="waves-effect waves-light btn" type="submit">Inicia Session</button>\n                                </div>\n                            </form>\n                          </div>\n                        </div>\n                        <div class="row">\n                          <div class="login-box">No tiene una cuenta? <a href="/signup">Reg\xEDstrate</a>\n                        </div>\n                      </div>\n                    </div>']);
+var _templateObject = _taggedTemplateLiteral(['<div class="col s12 m7">\n                      <div class="row">\n                        <div class="signup-box">\n                          <h1 class="platzigram">Platzigram</h1>\n                            <form class="signup-form" action="">\n                              <h2>', '</h2>\n                                <div class="section">\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-small-only" href="">', '</a>\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-med-and-up" href=""><i class="fab fa-facebook"></i>', '</a>\n                                </div>\n                                <div class="divider"></div>\n                                <div class="section">\n                                  <input id="username" type="text" name="usename" placeholder="', '"/>\n                                  <input id="password" type="password" name="password" placeholder="', '"/>\n                                  <button class="waves-effect waves-light btn" type="submit">', '</button>\n                                </div>\n                            </form>\n                          </div>\n                        </div>\n                        <div class="row">\n                          <div class="login-box">', ' <a href="/signup"> ', '</a>\n                        </div>\n                      </div>\n                    </div>'], ['<div class="col s12 m7">\n                      <div class="row">\n                        <div class="signup-box">\n                          <h1 class="platzigram">Platzigram</h1>\n                            <form class="signup-form" action="">\n                              <h2>', '</h2>\n                                <div class="section">\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-small-only" href="">', '</a>\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-med-and-up" href=""><i class="fab fa-facebook"></i>', '</a>\n                                </div>\n                                <div class="divider"></div>\n                                <div class="section">\n                                  <input id="username" type="text" name="usename" placeholder="', '"/>\n                                  <input id="password" type="password" name="password" placeholder="', '"/>\n                                  <button class="waves-effect waves-light btn" type="submit">', '</button>\n                                </div>\n                            </form>\n                          </div>\n                        </div>\n                        <div class="row">\n                          <div class="login-box">', ' <a href="/signup"> ', '</a>\n                        </div>\n                      </div>\n                    </div>']);
 
 function _taggedTemplateLiteral(strings, raw) {
   return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
@@ -10015,11 +10038,12 @@ function _taggedTemplateLiteral(strings, raw) {
 
 var yo = require('yo-yo');
 var landing = require('../landing');
+var translate = require('../translate');
 
-var signinForm = yo(_templateObject);
+var signinForm = yo(_templateObject, translate.message('signup.subheading'), translate.message('signup.text'), translate.message('signup.facebook'), translate.message('username'), translate.message('password'), translate.message('signin'), translate.message('signin.not-have-account'), translate.message('signin'));
 module.exports = landing(signinForm);
 
-},{"../landing":42,"yo-yo":37}],47:[function(require,module,exports){
+},{"../landing":43,"../translate":52,"yo-yo":37}],48:[function(require,module,exports){
 'use strict';
 
 var page = require('page');
@@ -10033,10 +10057,10 @@ page('/signup', function (ctx, next) {
   empty(main).appendChild(template);
 });
 
-},{"./template":48,"empty-element":3,"page":32,"title":34}],48:[function(require,module,exports){
+},{"./template":49,"empty-element":3,"page":32,"title":34}],49:[function(require,module,exports){
 'use strict';
 
-var _templateObject = _taggedTemplateLiteral(['<div class="col s12 m7">\n                      <div class="row">\n                        <div class="signup-box">\n                          <h1 class="platzigram">Platzigram</h1>\n                            <form class="signup-form" action="">\n                              <h2>Registrate para ver fotos de tus amigos estudiando en Platzi</h2>\n                                <div class="section">\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-small-only" href="">Iniciar sesi\xF3n con Facebook</a>\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-med-and-up" href=""><i class="fab fa-facebook"></i> Iniciar sesi\xF3n</a>\n                                </div>\n                                <div class="divider"></div>\n                                <div class="section">\n                                  <input id="email" type="email" name="email" placeholder="Correo Electronico"/>\n                                  <input id="name" type="text" name="name" placeholder="Nombre Completo"/>\n                                  <input id="username" type="text" name="usename" placeholder="Nombre de usuario"/>\n                                  <input id="password" type="password" name="password" placeholder="Contrase\xF1a"/>\n                                  <button class="waves-effect waves-light btn" type="submit">Registrate</button>\n                                </div>\n                            </form>\n                          </div>\n                        </div>\n                        <div class="row">\n                          <div class="login-box">Tiene una cuenta? <a href="/signin">Entrar</a>\n                        </div>\n                      </div>\n                    </div>'], ['<div class="col s12 m7">\n                      <div class="row">\n                        <div class="signup-box">\n                          <h1 class="platzigram">Platzigram</h1>\n                            <form class="signup-form" action="">\n                              <h2>Registrate para ver fotos de tus amigos estudiando en Platzi</h2>\n                                <div class="section">\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-small-only" href="">Iniciar sesi\xF3n con Facebook</a>\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-med-and-up" href=""><i class="fab fa-facebook"></i> Iniciar sesi\xF3n</a>\n                                </div>\n                                <div class="divider"></div>\n                                <div class="section">\n                                  <input id="email" type="email" name="email" placeholder="Correo Electronico"/>\n                                  <input id="name" type="text" name="name" placeholder="Nombre Completo"/>\n                                  <input id="username" type="text" name="usename" placeholder="Nombre de usuario"/>\n                                  <input id="password" type="password" name="password" placeholder="Contrase\xF1a"/>\n                                  <button class="waves-effect waves-light btn" type="submit">Registrate</button>\n                                </div>\n                            </form>\n                          </div>\n                        </div>\n                        <div class="row">\n                          <div class="login-box">Tiene una cuenta? <a href="/signin">Entrar</a>\n                        </div>\n                      </div>\n                    </div>']);
+var _templateObject = _taggedTemplateLiteral(['<div class="col s12 m7">\n                      <div class="row">\n                        <div class="signup-box">\n                          <h1 class="platzigram">Platzigram</h1>\n                            <form class="signup-form" action="">\n                              <h2>', '</h2>\n                                <div class="section">\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-small-only" href="">', '</a>\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-med-and-up" href=""><i class="fab fa-facebook"></i>', '</a>\n                                </div>\n                                <div class="divider"></div>\n                                <div class="section">\n                                  <input id="email" type="email" name="email" placeholder="', '"/>\n                                  <input id="name" type="text" name="name" placeholder="', '"/>\n                                  <input id="username" type="text" name="usename" placeholder="', '"/>\n                                  <input id="password" type="password" name="password" placeholder="', '"/>\n                                  <button class="waves-effect waves-light btn" type="submit">', '</button>\n                                </div>\n                            </form>\n                          </div>\n                        </div>\n                        <div class="row">\n                          <div class="login-box">', '<a href="/signin"> ', '</a>\n                        </div>\n                      </div>\n                    </div>'], ['<div class="col s12 m7">\n                      <div class="row">\n                        <div class="signup-box">\n                          <h1 class="platzigram">Platzigram</h1>\n                            <form class="signup-form" action="">\n                              <h2>', '</h2>\n                                <div class="section">\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-small-only" href="">', '</a>\n                                  <a class="waves-effect waves-light btn btn-fb hide-on-med-and-up" href=""><i class="fab fa-facebook"></i>', '</a>\n                                </div>\n                                <div class="divider"></div>\n                                <div class="section">\n                                  <input id="email" type="email" name="email" placeholder="', '"/>\n                                  <input id="name" type="text" name="name" placeholder="', '"/>\n                                  <input id="username" type="text" name="usename" placeholder="', '"/>\n                                  <input id="password" type="password" name="password" placeholder="', '"/>\n                                  <button class="waves-effect waves-light btn" type="submit">', '</button>\n                                </div>\n                            </form>\n                          </div>\n                        </div>\n                        <div class="row">\n                          <div class="login-box">', '<a href="/signin"> ', '</a>\n                        </div>\n                      </div>\n                    </div>']);
 
 function _taggedTemplateLiteral(strings, raw) {
   return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
@@ -10044,25 +10068,58 @@ function _taggedTemplateLiteral(strings, raw) {
 
 var yo = require('yo-yo');
 var landing = require('../landing');
+var translate = require('../translate');
 
-var signupForm = yo(_templateObject);
+var signupForm = yo(_templateObject, translate.message('signup.subheading'), translate.message('signup.text'), translate.message('signup.facebook'), translate.message('email'), translate.message('fullname'), translate.message('username'), translate.message('password'), translate.message('signup.call-to-action'), translate.message('signup.have-account'), translate.message('enter'));
 module.exports = landing(signupForm);
 
-},{"../landing":42,"yo-yo":37}],49:[function(require,module,exports){
+},{"../landing":43,"../translate":52,"yo-yo":37}],50:[function(require,module,exports){
 'use strict';
 
 module.exports = {
-        likes: '{ likes, plural, ' + '=0 { no likes. }' + '=1 { # like. }' + 'other { # likes. }}'
-};
-
-},{}],50:[function(require,module,exports){
-'use strict';
-
-module.exports = {
-  likes: '{ likes, number } me gusta'
+  likes: '{ likes, plural, ' + '=0 { no likes. }' + '=1 { # like. }' + 'other { # likes. }}',
+  logout: 'Logout',
+  english: 'English',
+  spanish: 'Spanish',
+  'signup.subheading': 'Sign up to see pictures of your friends studying in Platzi',
+  'signup.facebook': 'Log in with Facebook',
+  'signup.text': 'Log in',
+  email: 'Email',
+  username: 'Username',
+  fullname: 'Fullname',
+  password: 'Password',
+  'signup.call-to-action': 'Sign up',
+  'signup.have-account': 'Already have an account?',
+  signin: 'Signin',
+  'signin.not-have-account': 'Don\' have an account?',
+  language: 'Language',
+  enter: 'Enter'
 };
 
 },{}],51:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+  likes: '{ likes, number } me gusta',
+  logout: 'Salir',
+  english: 'Inglés',
+  spanish: 'Español',
+  'signup.subheading': 'Regístrate para ver fotos de tus amigos estudiando en Platzi',
+  'signup.facebook': 'Iniciar sesión con Facebook',
+  'signup.text': 'Iniciar sesión',
+  email: 'Correo electrónico',
+  username: 'Nombre de usuario',
+  fullname: 'Nombre completo',
+  password: 'Contraseña',
+  'signup.call-to-action': 'Regístrate',
+  'signup.have-account': '¿Tienes una cuenta?',
+  signin: 'Entrar',
+  'signin.not-have-account': '¿No tienes una cuenta?',
+  language: 'Idioma',
+  enter: 'Entrar'
+};
+
+},{}],52:[function(require,module,exports){
 'use strict';
 
 if (!window.Intl) {
@@ -10086,8 +10143,7 @@ var MESSAGES = {};
 MESSAGES.es = es;
 MESSAGES['en-US'] = en;
 
-// const locale = 'es'
-var locale = 'en-US';
+var locale = localStorage.locale || 'es';
 
 module.exports = {
   message: function message(text) {
@@ -10099,4 +10155,4 @@ module.exports = {
   date: new IntlRelativeFormat(locale)
 };
 
-},{"./en-US":49,"./es":50,"intl":25,"intl-messageformat":10,"intl-relativeformat":19,"intl-relativeformat/dist/locale-data/en.js":17,"intl-relativeformat/dist/locale-data/es.js":18,"intl/locale-data/jsonp/en-US.js":27,"intl/locale-data/jsonp/es.js":28}]},{},[41]);
+},{"./en-US":50,"./es":51,"intl":25,"intl-messageformat":10,"intl-relativeformat":19,"intl-relativeformat/dist/locale-data/en.js":17,"intl-relativeformat/dist/locale-data/es.js":18,"intl/locale-data/jsonp/en-US.js":27,"intl/locale-data/jsonp/es.js":28}]},{},[42]);
