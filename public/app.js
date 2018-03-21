@@ -11957,7 +11957,6 @@ page('/', header, loadPictures, function (ctx, next) {
 function loadPictures(ctx, next) {
   request.get('/api/pictures').end(function (err, res) {
     if (err) console.log(err);
-
     ctx.pictures = res.body;
     next();
   });

@@ -18,7 +18,6 @@ function loadPictures(ctx, next) {
     .get('/api/pictures')
     .end(function(err, res) {
       if(err) console.log(err)
-
       ctx.pictures = res.body;
       next()
     })
