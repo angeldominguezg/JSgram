@@ -3,8 +3,9 @@ const page = require('page')
 const empty = require('empty-element')
 const template = require('./template')
 const title = require('title')
-const request = require('superagent')
+// const request = require('superagent')
 const header = require('../header') // middleware
+const request = require('axios')
 
 page('/', header, loadPictures, (ctx, next) => {
   title('Platzigram - Home')
@@ -16,9 +17,11 @@ page('/', header, loadPictures, (ctx, next) => {
 function loadPictures(ctx, next) {
   request
     .get('/api/pictures')
-    .end(function(err, res) {
-      if(err) console.log(err)
-      ctx.pictures = res.body;
+    .then(function(res) {
+      ctx.pictures = res.data
       next()
+    })
+    .catch(function(err) {
+      console.log(err)
     })
 }

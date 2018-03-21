@@ -12,6 +12,7 @@
   "author": "Angel Dominguez <angeldominguezg@gmail.com> (https://github.com/angeldominguezg)",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
     "empty-element": "^1.0.0",
     "express": "^4.16.2",
     "install": "^0.10.4",
