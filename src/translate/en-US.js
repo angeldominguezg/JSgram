@@ -20,7 +20,9 @@ module.exports = {
   'signup.call-to-action': 'Sign up',
   'signup.have-account': 'Already have an account?',
   signin: 'Signin',
-  'signin.not-have-account': 'Don\' have an account?',
+  'signin.not-have-account': "Don' have an account?",
   language: 'Language',
-  enter: 'Enter'
+  enter: 'Enter',
+  'upload-picture': 'Upload Picture',
+  'upload': 'Upload'
 }

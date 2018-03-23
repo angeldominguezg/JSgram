@@ -11358,63 +11358,6 @@ module.exports = function header(ctx, next) {
 },{"../translate":79,"empty-element":28,"yo-yo":63}],67:[function(require,module,exports){
 'use strict';
 
-var asyncLoad = function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(ctx, next) {
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.prev = 0;
-            _context.next = 3;
-            return fetch('/api/pictures').then(function (res) {
-              return res.json();
-            });
-
-          case 3:
-            ctx.pictures = _context.sent;
-            _context.next = 9;
-            break;
-
-          case 6:
-            _context.prev = 6;
-            _context.t0 = _context['catch'](0);
-            return _context.abrupt('return', console.log(_context.t0));
-
-          case 9:
-          case 'end':
-            return _context.stop();
-        }
-      }
-    }, _callee, this, [[0, 6]]);
-  }));
-
-  return function asyncLoad(_x, _x2) {
-    return _ref.apply(this, arguments);
-  };
-}();
-
-function _asyncToGenerator(fn) {
-  return function () {
-    var gen = fn.apply(this, arguments);return new Promise(function (resolve, reject) {
-      function step(key, arg) {
-        try {
-          var info = gen[key](arg);var value = info.value;
-        } catch (error) {
-          reject(error);return;
-        }if (info.done) {
-          resolve(value);
-        } else {
-          return Promise.resolve(value).then(function (value) {
-            step("next", value);
-          }, function (err) {
-            step("throw", err);
-          });
-        }
-      }return step("next");
-    });
-  };
-}
-
 var page = require('page');
 var empty = require('empty-element');
 var template = require('./template');
@@ -11451,10 +11394,18 @@ function loadPicturesFetch(ctx, next) {
   });
 }
 
+// async function asyncLoad(ctx, next) {
+//   try {
+//     ctx.pictures = await fetch('/api/pictures').then(res => res.json())
+//   } catch (err) {
+//     return console.log(err)
+//   }
+// }
+
 },{"../header":66,"./template":68,"axios":1,"empty-element":28,"page":58,"title":60}],68:[function(require,module,exports){
 'use strict';
 
-var _templateObject = _taggedTemplateLiteral(['\n  <div class="container timeline">\n    <div class="row">\n    <div class="col s12 m10 offset-m1 l6 offset-l3">\n      ', '\n    </div>\n    </div>\n  </div>'], ['\n  <div class="container timeline">\n    <div class="row">\n    <div class="col s12 m10 offset-m1 l6 offset-l3">\n      ', '\n    </div>\n    </div>\n  </div>']);
+var _templateObject = _taggedTemplateLiteral(['\n  <div class="container timeline">\n    <div class="row">\n      <div class="col s12 m10 offset-m1 l8 offset-l2 center-align">\n        <form enctype="multipart/form-data" class="form-upload" id="formUpload">\n          <div id="fileName" class="fileUpload btn btn-flat cyan">\n            <span><i class="fas fa-camera-retro"></i> ', '</span>\n            <input name="picture" id="file" type="file" class="upload" onchange="', '"/>\n          </div>\n          <button id="btnUpload" type="submit" class="btn btn-flat cyan hide">', '</button>\n          <button id="btnCancel" type="button" class="btn btn-flat red hide" onclick="', '"><i class="fas fa-trash-alt"></i></button>\n        </form>\n      </div>\n    </div>\n    <div class="row">\n      <div class="col s12 m10 offset-m1 l6 offset-l3">\n        ', '\n      </div>\n    </div>\n  </div>'], ['\n  <div class="container timeline">\n    <div class="row">\n      <div class="col s12 m10 offset-m1 l8 offset-l2 center-align">\n        <form enctype="multipart/form-data" class="form-upload" id="formUpload">\n          <div id="fileName" class="fileUpload btn btn-flat cyan">\n            <span><i class="fas fa-camera-retro"></i> ', '</span>\n            <input name="picture" id="file" type="file" class="upload" onchange="', '"/>\n          </div>\n          <button id="btnUpload" type="submit" class="btn btn-flat cyan hide">', '</button>\n          <button id="btnCancel" type="button" class="btn btn-flat red hide" onclick="', '"><i class="fas fa-trash-alt"></i></button>\n        </form>\n      </div>\n    </div>\n    <div class="row">\n      <div class="col s12 m10 offset-m1 l6 offset-l3">\n        ', '\n      </div>\n    </div>\n  </div>']);
 
 function _taggedTemplateLiteral(strings, raw) {
   return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
@@ -11463,15 +11414,32 @@ function _taggedTemplateLiteral(strings, raw) {
 var yo = require('yo-yo');
 var layout = require('../layout');
 var picture = require('../picture-card');
+var translate = require('../translate').message;
 
 module.exports = function (pictures) {
-  var el = yo(_templateObject, pictures.map(function (pic) {
+  var el = yo(_templateObject, translate('upload-picture'), onChange, translate('upload'), cancel, pictures.map(function (pic) {
     return picture(pic);
   }));
+
+  function toggleButtons() {
+    document.getElementById('fileName').classList.toggle('hide');
+    document.getElementById('btnUpload').classList.toggle('hide');
+    document.getElementById('btnCancel').classList.toggle('hide');
+  }
+
+  function cancel() {
+    toggleButtons();
+    document.getElementById('formUpload').reset();
+  }
+
+  function onChange() {
+    toggleButtons();
+  }
+
   return layout(el);
 };
 
-},{"../layout":71,"../picture-card":72,"yo-yo":63}],69:[function(require,module,exports){
+},{"../layout":71,"../picture-card":72,"../translate":79,"yo-yo":63}],69:[function(require,module,exports){
 'use strict';
 
 var page = require('page');
@@ -11619,9 +11587,11 @@ module.exports = {
   'signup.call-to-action': 'Sign up',
   'signup.have-account': 'Already have an account?',
   signin: 'Signin',
-  'signin.not-have-account': 'Don\' have an account?',
+  'signin.not-have-account': "Don' have an account?",
   language: 'Language',
-  enter: 'Enter'
+  enter: 'Enter',
+  'upload-picture': 'Upload Picture',
+  'upload': 'Upload'
 };
 
 },{}],78:[function(require,module,exports){
@@ -11644,7 +11614,9 @@ module.exports = {
   signin: 'Entrar',
   'signin.not-have-account': '¿No tienes una cuenta?',
   language: 'Idioma',
-  enter: 'Entrar'
+  enter: 'Entrar',
+  'upload-picture': 'Subir Foto',
+  'upload': 'Subir'
 };
 
 },{}],79:[function(require,module,exports){
